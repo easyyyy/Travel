@@ -30,17 +30,18 @@ export default {
     .header-left
       width: .64rem
       float : left
+      margin-right  0.2rem
       .back-icon
         text-align center
         font-size .4rem
     .header-input
       flex 1
       background #fff
-      margin-top .12rem
-      margin-bottom  .12rem
+      margin-top .14rem
+      margin-bottom  .14rem
       padding-left .2rem
-      height .64rem
-      line-height .64rem
+      height .6rem
+      line-height .6rem
       border-radius .1rem
       color #ccc
     .header-right
