@@ -1,15 +1,30 @@
 <template>
-  <div class="icons">
-    <swiper>
-      <swiper-slide v-for="(page,index) of pages" :key="index">
-        <div class="icon" v-for="item of page" :key="item.id">
-          <div class="icon-img">
-            <img class="icon-img-content" :src="item.imgUrl" alt="">
+  <div>
+    <div class="icons">
+      <swiper :options="swiperOption">
+        <swiper-slide v-for="(page,index) of pages" :key="index">
+          <div class="icon" v-for="item of page" :key="item.id">
+            <div class="icon-img">
+              <img class="icon-img-content" :src="item.imgUrl" alt="">
+            </div>
+            <p class="keywords">{{item.desc}}</p>
           </div>
-          <p class="keywords">{{item.desc}}</p>
-        </div>
-      </swiper-slide>
-    </swiper>
+        </swiper-slide>
+        <div class="swiper-pagination"  slot="pagination"></div>
+      </swiper>
+      <ul class="positioning-and-list">
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div>
+      <ul class="positioning-and-list">
+        <li class="positioning">
+          <span class="iconfont">&#xe611;</span>
+          定位失败</li>
+        <li class="list"><span class="iconfont">&#xe76c;</span>必游榜单</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -19,6 +34,7 @@ export default {
   data () {
     return {
       swiperOption: {
+        pagination: '.swiper-pagination'
       },
       iconList: [
         {
@@ -86,23 +102,44 @@ export default {
   .icons >>> .swiper-container
     height 0
     padding-bottom 50%
-  .icon
-    float left
-    width 25%
-    height 1.5rem
-    padding-top .1rem
-    text-align center
-    touch-action: none
-    .icon-img
-      display inline-block
-      width 1.1rem
-      height 1.1rem
-      .icon-img-content
+  .icons >>> .swiper-pagination-bullet-active
+    background rgba(0,175,190,.8)
+  .positioning-and-list
+    display flex
+    flex-direction row
+    .positioning
+      width 50%
+      height 0.98rem
+      line-height: .98rem;
+      font-size: .28rem;
+      background  #fff;
+      text-align: center;
+    .list
+      width 50%
+      height 0.98rem
+      line-height: .98rem;
+      font-size: .28rem;
+      text-align: center;
+      background #fff
+  .icons
+    margin-top .1rem
+    .icon
+      float left
+      width 25%
+      height 1.5rem
+      padding-top .1rem
+      text-align center
+      touch-action: none
+      .icon-img
+        display inline-block
         width 1.1rem
         height 1.1rem
-    .keywords
-      margin-top: .1rem;
-      color: #212121;
-      font-size: .28rem;
-      ellipse()
+        .icon-img-content
+          width 1.1rem
+          height 1.1rem
+      .keywords
+        margin-top: .1rem;
+        color: #212121;
+        font-size: .28rem;
+        ellipse()
 </style>
