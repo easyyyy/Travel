@@ -9,6 +9,8 @@ import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
 import 'swiper/dist/css/swiper.css'
+import Icon from 'vue-svg-icon/Icon.vue'
+Vue.component('icon', Icon)
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper /* { default global options } */)
 fastClick.attach(document.body)
