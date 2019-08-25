@@ -13,7 +13,7 @@ import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/icons'
 import HomeRecommend from './components/Recommend'
-
+import HomeWeekend from './components/Weekend'
 export default {
 
   name: 'Home',
@@ -21,7 +21,8 @@ export default {
     HomeIcons,
     HomeHeader,
     HomeSwiper,
-    HomeRecommend
+    HomeRecommend,
+    HomeWeekend
   }
 }
 </script>

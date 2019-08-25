@@ -1,4 +1,4 @@
-<template xmlns="http://www.w3.org/1999/html">
+<template>
   <div>
     <div class="recommend-title">
       <span class="iconfont recommend-icon">&#xe615;</span>
