@@ -1,41 +1,48 @@
 <template>
-  <div class="list-container">
-    <div class="hot-city-container">
-      <h2>热门城市</h2>
-      <ul class="hot-city">
-        <li v-for="(item,id) of hotCities" :key="id">{{item.name}}</li>
-      </ul>
-    </div>
-    <h2>字幕排序</h2>
-    <div class="alphabet">
-      <ul class="alphabet-ul">
-        <li v-for="item in getAllChars" :key="item.index">{{item}}</li>
-      </ul>
-    </div>
-    <div class="alphabet-city" v-for="(item,index) in cities[0]" :key="index">
-      <h2>{{index}}</h2>
-      <ul>
-        <li v-for="city in item" :key="city.index">{{city.name}}</li>
-<!--        <li>北京</li>-->
-<!--        <li>北京</li>-->
-<!--        <li>北京</li>-->
-<!--        <li>北京</li>-->
-<!--        <li>北京</li>-->
-      </ul>
-    </div>
+  <div class="list-container" ref="wrapper">
+    <div>
+      <div class="hot-city-container">
+        <h2>热门城市</h2>
+        <ul class="hot-city">
+          <li v-for="(item,id) of hotCities" :key="id">{{item.name}}</li>
+        </ul>
+      </div>
+      <h2>字母排序</h2>
+      <div class="alphabet">
+        <ul class="alphabet-ul">
+          <li v-for="item in getAllChars" :key="item.index" @click="handleLetterClick">{{item}}</li>
+        </ul>
+      </div>
+      <div class="alphabet-city" v-for="(item,index) in cities[0]" :key="index" :ref="index" >
+        <h2>{{index}}</h2>
+        <ul>
+          <li v-for="city in item" :key="city.index">{{city.name}}</li>
+  <!--        <li>北京</li>-->
+  <!--        <li>北京</li>-->
+  <!--        <li>北京</li>-->
+  <!--        <li>北京</li>-->
+  <!--        <li>北京</li>-->
+        </ul>
+      </div>
 <!--    <ul class=""></ul>-->
+    </div>
   </div>
 </template>
 
 <script>
+import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wrapper)
+  },
   props: {
     cities: Array,
     hotCities: Array
   },
   data () {
     return {
+      letter: ''
     }
   },
   computed: {
@@ -46,6 +53,23 @@ export default {
       }
       return str
     }
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        console.log(this.$refs)
+        const element = this.$refs[this.letter][0]
+        // console.log(element)
+        // console.log(this.$refs)
+        // console.log(element)
+        this.scroll.scrollToElement(element)
+      }
+    }
+  },
+  methods: {
+    handleLetterClick (e) {
+      this.letter = e.target.innerText
+    }
   }
 
 }
@@ -53,6 +77,12 @@ export default {
 
 <style lang="stylus" scoped>
   .list-container
+    overflow hidden
+    position: absolute
+    top: 1.78rem
+    left: 0
+    right: 0
+    bottom: 0
     h2
       font-size .24rem
       margin .24rem .3rem
