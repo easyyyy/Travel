@@ -4,7 +4,7 @@
       <div class="hot-city-container">
         <h2>热门城市</h2>
         <ul class="hot-city">
-          <li v-for="(item,id) of hotCities" :key="id">{{item.name}}</li>
+          <li v-for="(item,id) of hotCities" :key="id" @click="handleCityClick(item.name)">{{item.name}}</li>
         </ul>
       </div>
       <h2>字母排序</h2>
@@ -16,12 +16,7 @@
       <div class="alphabet-city" v-for="(item,index) in cities[0]" :key="index" :ref="index" >
         <h2>{{index}}</h2>
         <ul>
-          <li v-for="city in item" :key="city.index">{{city.name}}</li>
-  <!--        <li>北京</li>-->
-  <!--        <li>北京</li>-->
-  <!--        <li>北京</li>-->
-  <!--        <li>北京</li>-->
-  <!--        <li>北京</li>-->
+          <li v-for="city in item" :key="city.index" @click="handleCityClick(city.name)">{{city.name}}</li>
         </ul>
       </div>
 <!--    <ul class=""></ul>-->
@@ -65,6 +60,10 @@ export default {
   methods: {
     handleLetterClick (e) {
       this.letter = e.target.innerText
+    },
+    handleCityClick (city) {
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')
     }
   }
 
