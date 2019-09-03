@@ -5,7 +5,7 @@
       <p class="title">猜你喜欢</p>
     </div>
     <ul class="items">
-      <li class="item" v-for="item of recommendList" :key="item.id">
+        <router-link tag="li" :to="'/detail/' + item.id" class="item" v-for="item of recommendList" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" alt="">
         </div>
@@ -25,7 +25,7 @@
           <span class="location">{{item.location}}</span>
         </p>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -39,33 +39,6 @@ export default {
   data () {
     return {
       sights: [
-        // {
-        //   'id': '457150',
-        //   'name': '奥林匹克塔',
-        //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_200x200_32e22bed.jpg',
-        //   price: 138,
-        //   location: '朝阳区',
-        //   commentNum: 407,
-        //   stars: 5
-        // },
-        // {
-        //   'id': '2267',
-        //   'name': '八达岭长城',
-        //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-        //   price: 40,
-        //   location: '延庆县',
-        //   commentNum: 65721,
-        //   stars: 5
-        // },
-        // {
-        //   'id': '38170',
-        //   'name': '故宫',
-        //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_200x200_2458ffb2.jpg',
-        //   price: 60,
-        //   location: '东城区',
-        //   commentNum: 457010,
-        //   stars: 5
-        // }
       ]
     }
   }
