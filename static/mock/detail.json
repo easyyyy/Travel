@@ -1,0 +1,79 @@
+{
+  "ret": true,
+  "data": {
+    "sightName": "奥林匹克塔",
+    "bannerImg": "http://img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_600x330_3f524da7.jpg",
+    "galleryImgs": ["http://img1.qunarzz.com/sight/p0/1804/b6/b68ccb778c685283a3.img.jpg_r_800x800_da0c0853.jpg", "http://img1.qunarzz.com/sight/p0/1804/cf/cfab40f6cd9d80f1a3.img.jpg_r_800x800_c0f07486.jpg"],
+    "categoryList": [
+      {
+        "title": "日场票",
+        "children": [
+          {
+            "title": "[日场]奥林匹克塔成人票",
+            "price": 137.9
+          },
+          {
+            "title": "[日场]奥林匹克塔双人票",
+            "price": 269.3
+          },
+          {
+            "title": "[日场]奥林匹克塔三人票",
+            "price": 390
+          }
+        ]
+      },
+      {
+        "title": "夜场票",
+        "children": [
+          {
+            "title": "[夜场]奥林匹克塔成人票",
+            "price": 121.9
+          },
+          {
+            "title": "[夜场]奥林匹克塔双人票",
+            "price": 269.9
+          },
+          {
+            "title": "[夜场]奥林匹克塔三人票",
+            "price": 390
+          }
+        ]
+      },
+      {
+        "title": "联票",
+        "children": [
+          {
+            "title": "中国科学技术馆(主展厅）+奥林匹克塔夜场（成人票）",
+            "price": 160
+          },
+          {
+            "title": "中国科学技术馆(主展厅）+奥林匹克塔夜场（学生票）",
+            "price": 145
+          }
+        ]
+      },
+      {
+        "title": "年票",
+        "children": [
+          {
+            "title": "[即买即用]2019亲子年票奥林匹克塔夜场票",
+            "price": 198
+          }
+        ]
+      },
+      {
+        "title": "一日游",
+        "children": [
+          {
+            "title": "【北京出发】八奇洞+银狐洞+白龙潭+金海湖风景区+太平洋海底世界+纪晓岚故居+慕田峪长城+京西古道+蓝调薰衣草庄园+静之湖滑雪场+中国儿童中心+北京迷你世界青少年职业体验馆+燕郊蓝天城+蓝调冰雪嘉年华+奥林匹克塔+洼里乡居楼+泰山皮影戏1日游",
+            "price": 198
+          },
+          {
+            "title": "【北京出发】八达岭长城+鸟巢+中国科学技术馆+水立方+八达岭长城缆车+奥林匹克塔+梦幻长城球幕影院1日游",
+            "price": 40
+          }
+        ]
+      }
+    ]
+  }
+}

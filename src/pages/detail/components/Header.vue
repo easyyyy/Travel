@@ -4,7 +4,10 @@
         <div class="iconfont abs-icon">&#xe624;</div>
       </router-link>
       <div class="header-fixed" v-show="!showAbs">
-        景点详情
+        <router-link tag="div" to="/">
+          <div class="iconfont fixed-back">&#xe624;</div>
+        </router-link>
+        {{sightName}}
       </div>
     </div>
 </template>
@@ -12,6 +15,9 @@
 <script>
 export default {
   name: 'DetailHeader',
+  props: {
+    sightName: ''
+  },
   data () {
     return {
       showAbs: true,
@@ -20,10 +26,10 @@ export default {
       }
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  deactivated () {
+  destroyed () {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
@@ -71,7 +77,17 @@ export default {
     color #ffffff
     background $bgColor
     font-size .32rem
-    /*.back*/
+    z-index 20
+    .fixed-back
+      position absolute
+      float left
+      left .1rem
+      top .1rem
+      width .72rem
+      height: .72rem
+      text-align center
+      line-height .72rem
+  /*.back*/
     /*  position absolute*/
     /*  font-size .4rem*/
     /*  float left*/
