@@ -7,13 +7,16 @@
       </div>
       <div class="banner-title"><div class="title-info">{{sightName}}</div></div>
     </div>
-    <common-gallery :imgs="galleryImgs" v-show="showGallery" @handleGalleryEmitClick="handleGalleryClick"></common-gallery>
+    <fade-animation>
+      <common-gallery :imgs="galleryImgs" v-show="showGallery" @handleGalleryEmitClick="handleGalleryClick"></common-gallery>
+    </fade-animation>
   </div>
 
 </template>
 
 <script>
 import CommonGallery from '@/common/gallery/Gallery'
+import FadeAnimation from '@/common/fadeAnimation/fadeAnimation'
 export default {
   name: 'Banner',
   props: {
@@ -28,7 +31,8 @@ export default {
     }
   },
   components: {
-    CommonGallery
+    CommonGallery,
+    FadeAnimation
   },
   methods: {
     handleGalleryClick () {
