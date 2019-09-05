@@ -29,7 +29,10 @@ import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
   mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper, {
+      click: true,
+      tap: true
+    })
   },
   props: {
     cities: Array,

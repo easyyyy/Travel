@@ -10,6 +10,7 @@ import 'styles/iconfont.css'
 import 'swiper/dist/css/swiper.css'
 import Icon from 'vue-svg-icon/Icon.vue'
 import store from './store/index.js'
+import 'babel-polyfill'
 
 // 添加Fastclick移除移动端点击延迟
 // eslint-disable-next-line import/no-duplicates
